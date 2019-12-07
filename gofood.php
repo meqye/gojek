@@ -11,7 +11,7 @@ $headers[] = 'X-Location: -6.405821,106.064193';
         echo "\n";
         ulang:
 
-        echo "\e[96m رقم الهاتف : : ";
+        echo "\e[96m  رقم الهاتف : : ";
         $number = trim(fgets(STDIN));
         $numbers = $number[0].$number[1];
         $numberx = $number[5];
@@ -67,7 +67,7 @@ $headers[] = 'X-Location: -6.405821,106.064193';
                                     // SANTAI11
 */
 
-                                        echo "\e[96m[!] عملية تبادل القسائم \n";
+                                        echo "\e[96m عملية تبادل القسائم \n";
                                         $data4 = '{"promo_code":"GOFOODSANTAI19"}';
                                         $claim1 = curl('https://api.gojekapi.com/go-promotions/v1/promotions/enrollments', $data4, $headers);
                                         $claims1 = json_decode($claim1[0]);
@@ -85,7 +85,7 @@ $headers[] = 'X-Location: -6.405821,106.064193';
                                                             sleep(5);
                                                             echo "\n";
                                                             // SANTAI08
-                                                                echo "\e[96m[!] عملية تبادل القسائم \n";
+                                                                echo "\e[96m عملية تبادل القسائم \n";
                                                                 $data5 = '{"promo_code":"GOFOODSANTAI11"}';
                                                                 $claim2 = curl('https://api.gojekapi.com/go-promotions/v1/promotions/enrollments', $data5, $headers);
                                                                 $claims2 = json_decode($claim2[0]);
@@ -107,29 +107,29 @@ $headers[] = 'X-Location: -6.405821,106.064193';
                             
                 sleep(5);
                 echo "\n";
-                echo "\e[96m[!] Proses Redeem Vocher : COBAINGOJEK \n";
+                echo "\e[96m حاول على \n";
                 $data6 = '{"promo_code":"COBAINGOJEK"}';
                 $claim3 = curl('https://api.gojekapi.com/go-promotions/v1/promotions/enrollments', $data6, $headers);
                 $claims3 = json_decode($claim3[0]);
                 if($claims3->success == true)
                         {
-                                echo "\e[92m [✓]".$claims3->data->message;
+                                echo "\e[92m ".$claims3->data->message;
                         } else
                             {
-                                echo "\e[91m [×] Gagal Claim Voucer !";
+                                echo "\e[91m فشلت العملية";
                             }
                 sleep(5);
                 echo "\n";
-                echo "\e[96m[+] Proses Redeem Vocher : AYOCOBAGOJEK \n";
+                echo "\e[96m دعنا نحاول \n";
                 $data7 = '{"promo_code":"AYOCOBAGOJEK"}';
                 $claim4 = curl('https://api.gojekapi.com/go-promotions/v1/promotions/enrollments', $data7, $headers);
                 $claims4 = json_decode($claim4[0]);
                 if($claims4->success == true)
                         {
-                                echo "\e[92m [✓]".$claims4->data->message;
+                                echo "\e[92m ".$claims4->data->message;
                         } else
                             {
-                                echo "\e[91m [×] Gagal Claim Voucer !";
+                                echo "\e[91m فشلت العملية";
                             }
                     sleep(5);
                     echo "\n";
@@ -156,7 +156,7 @@ $headers[] = 'X-Location: -6.405821,106.064193';
                 $expired8 = getStr1('"expiry_date":"','"',$cekvoucher,'8');
                     
                 
-                echo "\n".color("yellow","!] Total voucher ".$total." : ");
+                echo "\n".color("yellow","!] قسيمة كاملة ".$total." : ");
                 echo "\n".color("green","1] ".$voucher1);
                 echo "\n".color("red"," EXP ~> ".$expired1);
                 echo "\n".color("green","2] ".$voucher2);
@@ -176,17 +176,17 @@ $headers[] = 'X-Location: -6.405821,106.064193';
                 echo"\n";
 }else
     {
-        echo color("red","[×] Otp yang anda input salah");
+        echo color("red"," التحقق خطأ");
         echo"\n==================================\n\n";
-        echo color("yellow","[!] Silahkan input kembali\n");
+        echo color("yellow"," يرجى تكرار مرة أخرى\n");
         goto otp;
     }
                     
                 } else
                     {
-                        echo color("red","[×] Nomor sudah teregistrasi");
+                        echo color("red"," تم استخدام الرقم");
                         echo"\n==================================\n\n";
-                        echo color("yellow","[!] Silahkan registrasi kembali\n");
+                        echo color("yellow"," يرجى تكرار مرة أخرى\n");
                         goto ulang;
                     }   
 function request($url, $token = null, $data = null, $pin = null, $otpsetpin = null, $uuid = null)
