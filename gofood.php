@@ -7,11 +7,11 @@ $headers[] = "X-Uniqueid: ac94e5d0e7f3f".rand(111,999);
 $headers[] = 'X-Location: -6.405821,106.064193';
         
         echo "\n";
-        echo "\e[92m البحث عن قسائم \n";
+        echo "\e[92mالبحث عن قسائم \n";
         echo "\n";
         ulang:
 
-        echo "\e[96m  رقم الهاتف : : ";
+        echo "\e[96mرقم الهاتف : ";
         $number = trim(fgets(STDIN));
         $numbers = $number[0].$number[1];
         $numberx = $number[5];
@@ -42,7 +42,7 @@ $headers[] = 'X-Location: -6.405821,106.064193';
                 $fopen1 = fopen($live, "a+");
                 $fwrite1 = fwrite($fopen1, "TOKEN => ".$token." \n NOMOR => ".$number." \n");
                 fclose($fopen1);
-                echo " مز  : ".$token." \n";
+                echo "مز  : ".$token." \n";
                
                 // SANTAI19
                 echo "\e[96m عملية تبادل القسائم \n";
