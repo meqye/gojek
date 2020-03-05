@@ -66,7 +66,7 @@ $headers[] = 'X-Location: -6.405821,106.064193';
                                     // SANTAI11
 
                                         echo "\e[96m عملية تبادل القسائم \n";
-                                        $data4 = '{"promo_code":"GOFOODSANTAI19"}';
+                                        $data4 = '{"promo_code":"G-MPW4WBM"}';
                                         $claim1 = curl('https://api.gojekapi.com/go-promotions/v1/promotions/enrollments', $data4, $headers);
                                         $claims1 = json_decode($claim1[0]);
                                         if($claims1->success == true) 
